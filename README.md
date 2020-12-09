@@ -273,6 +273,4 @@ Tests run: 4, Failures: 0, Errors: 0, Skipped: 0
 ###Notes: 
 ---
 
-I haven't included any additional validation. also in order to validate  the productType attribute has value PERSONAL_LOAN - i haven't parsed each json 
-
-value in the response payload individually. API response is big so I skipped POJO process. 
+I haven't included any additional validation. also in order to validate  "the productType attribute has value PERSONAL_LOAN" - i haven't parsed each json value in the response payload individually. API response is big so I skipped POJO process. 
