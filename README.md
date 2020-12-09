@@ -144,6 +144,7 @@ it has below method :
 
 
 ###UITest.java - for running UI test scenario and validating it. 
+------------------------------------------------------------------
 
 test - validateThat_offerPageLoanInfo_matchesWith_BorrowerPortalPageLoanInfo()
 
@@ -160,6 +161,7 @@ it has below methods for validating :
 1. CredapiRestClient.java - for creating rest client for Post call request 
 
 ###APITest.java - for running and validating API tests 
+----------------------------------------------------
 
 test 1 - validate_withCorrectCredentials_apiResponse200()
 
@@ -168,7 +170,7 @@ test 2 - validate_withCorrectCredentials_productTypeAttribute()
 test 3 - validate_withUserNameDoesntExistInDB_apiResponse401()
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------
-###Yes - I used Java, Selenium, TestNG and Maven! 
+###Yes - I used Java, Selenium, chromedriver,  TestNG and Maven! 
 
 ###Notes: I haven't included any additional validation. also in order to validate  the productType attribute has value PERSONAL_LOAN - i haven't parsed each json value in the response payload individually. API response is big so I skipped POJO process. 
 
