@@ -30,8 +30,14 @@ Automation Steps :
 10.Validate that Borrower is on Loan Offer Page
 
  ----------------------------------------------------------------------------------------------------------------------------------------------------------------
+###API Tests
  
- 
+1. validate that for correct credentials provided in the payload below the API response code is 200 (OK)
+
+2.For the above use case, parse each json value in the response payload individually. Then validate the producttype attribute has value PERSONAL_LOAN
+
+3.Validate that in the initail POST request, if a different username is provided (that doesnt exist in our system)-the API response is a 401 (Unauthorized)
+
 
  
  
