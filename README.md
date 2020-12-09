@@ -182,5 +182,96 @@ test 3 - validate_withUserNameDoesntExistInDB_apiResponse401()
 -----
 ###Notes: I haven't included any additional validation. also in order to validate  the productType attribute has value PERSONAL_LOAN - i haven't parsed each json value in the response payload individually. API response is big so I skipped POJO process. 
 
-Thank you!
- ----
+
+Test Logs : 
+----------
+
+/Users/p_varmora/Library/Java/JavaVirtualMachines/openjdk-15.0.1/Contents/Home/bin/java -Dmaven.multiModuleProjectDirectory=/Users/p_varmora/IdeaProjects/Upgrade_Website_Functionality/UIandAPIautomationTasks "-Dmaven.home=/Applications/IntelliJ IDEA CE.app/Contents/plugins/maven/lib/maven3" "-Dclassworlds.conf=/Applications/IntelliJ IDEA CE.app/Contents/plugins/maven/lib/maven3/bin/m2.conf" "-Dmaven.ext.class.path=/Applications/IntelliJ IDEA CE.app/Contents/plugins/maven/lib/maven-event-listener.jar" "-javaagent:/Applications/IntelliJ IDEA CE.app/Contents/lib/idea_rt.jar=63034:/Applications/IntelliJ IDEA CE.app/Contents/bin" -Dfile.encoding=UTF-8 -classpath "/Applications/IntelliJ IDEA CE.app/Contents/plugins/maven/lib/maven3/boot/plexus-classworlds.license:/Applications/IntelliJ IDEA CE.app/Contents/plugins/maven/lib/maven3/boot/plexus-classworlds-2.6.0.jar" org.codehaus.classworlds.Launcher -Didea.version=2020.2.3 test
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for org.example:WebScenario:jar:1.0-SNAPSHOT
+[WARNING] 'dependencies.dependency.(groupId:artifactId:type:classifier)' must be unique: org.testng:testng:jar -> duplicate declaration of version 6.14.3 @ line 62, column 21
+[WARNING] 'dependencies.dependency.(groupId:artifactId:type:classifier)' must be unique: org.testng:testng:jar -> duplicate declaration of version 6.14.3 @ line 68, column 21
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[INFO] 
+[INFO] ----------------------< org.example:WebScenario >-----------------------
+[INFO] Building WebScenario 1.0-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ WebScenario ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ WebScenario ---
+[INFO] Changes detected - recompiling the module!
+[WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+[INFO] Compiling 9 source files to /Users/p_varmora/IdeaProjects/Upgrade_Website_Functionality/UIandAPIautomationTasks/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ WebScenario ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] skip non existing resourceDirectory /Users/p_varmora/IdeaProjects/Upgrade_Website_Functionality/UIandAPIautomationTasks/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ WebScenario ---
+[INFO] Changes detected - recompiling the module!
+[WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+[INFO] Compiling 2 source files to /Users/p_varmora/IdeaProjects/Upgrade_Website_Functionality/UIandAPIautomationTasks/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ WebScenario ---
+[INFO] Surefire report directory: /Users/p_varmora/IdeaProjects/Upgrade_Website_Functionality/UIandAPIautomationTasks/target/surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running TestSuite
+Configuring TestNG with: org.apache.maven.surefire.testng.conf.TestNG652Configurator@12bc6874
+App started...
+------
+Starting ChromeDriver 87.0.4280.88 (89e2380a3e36c3464b5dd1302349b1382549290d-refs/branch-heads/4280@{#1761}) on port 21495
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully.
+Dec 08, 2020 10:08:37 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+
+navigate to the credify homepage
+-----
+fill the Borrower loan amount info
+----
+fill the Borrower application info
+---
+fill the Borrower income info
+---
+create the Borrower Account
+-----
+sign out from the menu option
+---
+navigate to the Borrower account login portal
+----
+Borrower log into the portal
+--
+validate that loan info matches with previously stored info
+-
+validate that Borrower is on Loan offer page
+--
+App Ended...
+--
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 36.768 sec
+---
+
+Results :
+-----
+
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0
+---------------
+
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  42.876 s
+[INFO] Finished at: 2020-12-08T22:09:10-08:00
+[INFO] ------------------------------------------------------------------------
+
