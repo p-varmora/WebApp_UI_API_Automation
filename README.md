@@ -31,12 +31,47 @@ Automation Steps :
 
  ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 ###API Tests
+
+/*
+
+Write the test that makes the post request to API mentionned in the user story. 
+
+
+*/
+
  
 1. validate that for correct credentials provided in the payload below the API response code is 200 (OK)
 
+Automation Steps: 
+
+1.create a rest client for Post Request
+
+2.hit the server with valid headers, end-point, and payLoad through restclient object 
+
+3. strore the status code in variable and validate it with expected status code
+
 2.For the above use case, parse each json value in the response payload individually. Then validate the producttype attribute has value PERSONAL_LOAN
 
+1.create a rest client for Post Request
+
+2.hit the server with valid headers, end-point, and payLoad through restclient object 
+
+3.strore the api response in string
+
+4.create jsonObject from string
+
+5.look for specific jsonArray for productType attribute
+
+6.fetch the productType attribute value and validate that it has value PERSONAL_LOAN
+
+
 3.Validate that in the initail POST request, if a different username is provided (that doesnt exist in our system)-the API response is a 401 (Unauthorized)
+
+1.create a rest client for Post Request
+
+2.hit the server with a different username is provided (that doesnt exist in our system through restclient object 
+
+3. strore the status code in variable and validate it with expected status code
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -49,26 +84,36 @@ UI Test code walk through : for each page I've created a sperate class with cons
 1.BaseTestSetup.java - for initializing webdriver, browser and navigating to the Application "https://www.credify.tech/phone/nonDMFunnel"
 
 it has below methods : 
+
 1.initializeApplication()
+
 2.closeApplication() 
 
 2.BorrowerRateCheckHomePage.java - for locating and storing webElements specific to this page and it has three methods to filling the borrower loan amount and purposes details 
 
 it has below methods : 
+
 1.initializeApplication()
+
 2.closeApplication() 
 
 3.BorrowerApplicationFormPage.java - for locating and storing webElements specific to this page and it has five methods to filling the borrower application
 it has below methods : 
+
 1.fillBorrowerFirstName_LastName()
+
 2.fillBorrower_Address() 
+
 3.fillBorrower_city_state_zipCode()
+
 4.fillBorrower_birthDate()
+
 5.clickOnContinueButton()
 
 4.BorrowerIncomeInfoPage.java - for locating and storing webElements specific to this page and it has one methods to filling the borrower income
 
 it has below method : 
+
 1.fillBorrowerIncomeInfo()
  
 5.BorrowerPortalLoanOfferPage.java - for locating and storing webElements specific to this page for validating purpose 
@@ -76,38 +121,42 @@ it has below method :
 6.BorrowerPortalLoginPage.java - for locating and storing webElements specific to this page and it has two methods to login into portal
 
 it has below methods : 
+
 1.borrowerPortal_userName_passWord()
+
 2.signInToBorrowerPortal() 
 
 7.CreateBorrowerAccountPage.java - for locating and storing webElements specific to this page and it has three methods to create the borrower account
 
 it has below methods : 
+
 1.fillBorrower_userName_passWord()
+
 2.checkAgreements() 
+
 3.clickOnFinalRateCheckButton()
 
 8.LoanOfferPage.java - for locating and storing webElements specific to this page and it has one method for signing out from offer page
 
 it has below method : 
+
 1.signOutFromLoanOfferPage()
 
 
 9.UITest.java - for running UI test scenario and validating it. 
 
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-API test code walk through: 
+###API test code walk through: 
 
 1. CredapiRestClient.java - for creating rest client for Post call request 
 
 2. APITest.java - for running and validating API tests 
 
 
-Yes - I used Java, Selenium, TestNG and Maven! 
+###Yes - I used Java, Selenium, TestNG and Maven! 
 
-Notes: I haven't included any additional validation. also in order to validate  the productType attribute has value PERSONAL_LOAN - i haven't parsed each json value in the response payload individually. API response is big so I skipped POJO process. 
+###Notes: I haven't included any additional validation. also in order to validate  the productType attribute has value PERSONAL_LOAN - i haven't parsed each json value in the response payload individually. API response is big so I skipped POJO process. 
 
 Thank you!
- 
- 
  
