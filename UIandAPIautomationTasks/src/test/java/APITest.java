@@ -10,11 +10,21 @@ import java.util.HashMap;
 
 public class APITest {
 
+    /*
+Test 1 - Validate that for correct credentials provided in the payload below the API response code is 200 (OK)
+Test 2 - For the above use case, parse each json value in the response payload individually.
+         Then validate the productType attribute has value PERSONAL_LOAN
+Test 3 - Validate that in the initial POST request, if a different username is provided (that doesnt exist in our system)
+         the API response is a 401 (Unauthorized)
+          */
+
+
     private static String credapiURL = "https://credapi.credify.tech/api/brportorch/v2/login";
     CredapiRestClient credapiRestClient = new CredapiRestClient();
     CloseableHttpResponse closebaleHttpResponse;
     private static String payLoad = "{\"username\" : \"coding.challenge.login@upgrade.com\",\"password\" : \"On$3XcgsW#9q\",\"recaptchaToken\": \"coding_challenge\"}";
 
+    //Test 1
     @Test
     public void validate_withCorrectCredentials_apiResponse200() throws IOException {
 
@@ -27,6 +37,7 @@ public class APITest {
         Assert.assertEquals(responseStatusCode, 200);
     }
 
+    //Test 2
     @Test
     public void validate_withCorrectCredentials_productTypeAttribute() throws IOException, ParseException {
 
@@ -48,6 +59,7 @@ public class APITest {
         Assert.assertEquals(productTypeAttribute, jsonArrayObject.getString("productType"));
     }
 
+    //Test 3
     @Test
     public void validate_withUserNameDoesntExistInDB_apiResponse401() throws IOException {
 

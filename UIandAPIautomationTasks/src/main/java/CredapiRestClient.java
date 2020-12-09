@@ -7,6 +7,8 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
+
+//rest client class for post call request
 public class CredapiRestClient  {
 
     public CloseableHttpResponse postRequest(String url, String payLoad, HashMap<String, String> headerMap) throws IOException {
