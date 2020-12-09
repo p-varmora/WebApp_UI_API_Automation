@@ -178,11 +178,6 @@ test 2 - validate_withCorrectCredentials_productTypeAttribute()
 test 3 - validate_withUserNameDoesntExistInDB_apiResponse401()
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------
-###Yes - I used Java, Selenium, chromedriver,  TestNG and Maven! 
------
-###Notes: I haven't included any additional validation. also in order to validate  the productType attribute has value PERSONAL_LOAN - i haven't parsed each json value in the response payload individually. API response is big so I skipped POJO process. 
-
-
 Test Logs : 
 ----------
 
@@ -275,3 +270,9 @@ Tests run: 4, Failures: 0, Errors: 0, Skipped: 0
 [INFO] Finished at: 2020-12-08T22:09:10-08:00
 [INFO] ------------------------------------------------------------------------
 
+###Notes: 
+---
+
+I haven't included any additional validation. also in order to validate  the productType attribute has value PERSONAL_LOAN - i haven't parsed each json 
+
+value in the response payload individually. API response is big so I skipped POJO process. 
