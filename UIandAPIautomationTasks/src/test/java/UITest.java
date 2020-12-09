@@ -3,7 +3,7 @@ import org.testng.Reporter;
 import org.testng.annotations.Test;
 import java.util.concurrent.TimeUnit;
 
-public class WebScenarioTest extends BaseTestSetup {
+public class UITest extends BaseTestSetup {
 
      /*
     UserStory : Verfiy via the UI that As Borrower - you are seeing loan offers,
@@ -33,7 +33,7 @@ Automation Steps :
     public static String borrowerPortalApp = "https://www.credify.tech/portal/login";
 
 
-    public WebScenarioTest(){
+    public UITest(){
         super();
     }
 
@@ -41,14 +41,14 @@ Automation Steps :
     public void validateThat_offerPageLoanInfo_matchesWith_BorrowerPortalPageLoanInfo() {
 
         initializeApplication();
-        Reporter.log("1.navigate to the credify homepage", true);
+        Reporter.log("navigate to the credify homepage", true);
 
-        Reporter.log("2.fill the Borrower loan amount info", true);
+        Reporter.log("fill the Borrower loan amount info", true);
         borrowerRateCheckHomePage = new BorrowerRateCheckHomePage();
         borrowerRateCheckHomePage.fillBorrowerLoanAmountAndLoanPurposeInfo("3000", 3);
         borrowerRateCheckHomePage.clickOnCheckYourRateButton();
 
-        Reporter.log("3.fill the Borrower application info", true);
+        Reporter.log("fill the Borrower application info", true);
         borrowerApplicationFormPage = new BorrowerApplicationFormPage();
         borrowerApplicationFormPage.fillBorrowerFirstName_LastName("Parth", "QAEngineer");
         borrowerApplicationFormPage.fillBorrower_Address("275 Battery St");
@@ -56,35 +56,35 @@ Automation Steps :
         borrowerApplicationFormPage.fillBorrower_birthDate("10101992");
         borrowerApplicationFormPage.clickOnContinueButton();
 
-        Reporter.log("4.fill the Borrower income info", true);
+        Reporter.log("fill the Borrower income info", true);
         borrowerIncomeInfoPage = new BorrowerIncomeInfoPage();
         borrowerIncomeInfoPage.fillBorrowerIncomeInfo("135000", "6500");
 
-        Reporter.log("5.create the Borrower Account", true);
+        Reporter.log("create the Borrower Account", true);
         createBorrowerAccountPage = new CreateBorrowerAccountPage();
         createBorrowerAccountPage.fillBorrower_userName_passWord("Parth9091@upgrade-challenge.com", "TESLAmodel3");
         createBorrowerAccountPage.checkAgreements();
         createBorrowerAccountPage.clickOnFinalRateCheckButton();
 
         driver.manage().timeouts().implicitlyWait(02, TimeUnit.MINUTES);
-        Reporter.log("6.sign out from the menu option", true);
+        Reporter.log("sign out from the menu option", true);
         loanOfferPage = new LoanOfferPage();
         loanOfferPage.signOutFromLoanOfferPage();
 
-        Reporter.log("7.navigate to the Borrower account login portal", true);
+        Reporter.log("navigate to the Borrower account login portal", true);
         driver.navigate().to(borrowerPortalApp);
 
-        Reporter.log("8.Borrower log into the portal", true);
+        Reporter.log("Borrower log into the portal", true);
         borrowerPortalLoginPage = new BorrowerPortalLoginPage();
         borrowerPortalLoginPage.borrowerPortal_userName_passWord("Parth9091@upgrade-challenge.com", "TESLAmodel3");
         borrowerPortalLoginPage.signInToBorrowerPortal();
 
         driver.manage().timeouts().implicitlyWait(02, TimeUnit.MINUTES);
 
-        Reporter.log("9.validate that loan info matches with previously stored info", true);
+        Reporter.log("validate that loan info matches with previously stored info", true);
         validate_offerPageLoanInfo_matchesWith_BorrowerPortalPageLoanInfo();
 
-        Reporter.log("10.validate that Borrower is on Loan offer page", true);
+        Reporter.log("validate that Borrower is on Loan offer page", true);
         validate_user_on_LoanOfferPage();
 
         closeApplication();
