@@ -1,5 +1,5 @@
-### Upgrade_Website_Functionality
-As an independent auditor to verify the certain functionality of upgrade website. 
+### Website_Functionality
+As an independent auditor to verify the certain functionality of  website. 
 
 ###UI Scenario : 
 -----
@@ -8,7 +8,7 @@ As an independent auditor to verify the certain functionality of upgrade website
 
 Automation Steps :
 ----
-1.Launch the browser with “https://www.credify.tech/portal/login”
+1.Launch the browser with url
 
 2.Fill the loan Amount and select the purposes and Click the "Check your rate" button
 
@@ -20,7 +20,7 @@ Automation Steps :
 
 6.Log Out from Menu option of Loan offer Page
 
-7.Login into the Borrower Account via "https://www.credify.tech/portal/login"
+7.Login into the Borrower Account via url
 
 8.Borrower logged successfully Into the Portal with valid credentials
 
@@ -84,7 +84,7 @@ Ive followed page object design pattern for UI and API test.
 ------------------------------
 
 
-1.BaseTestSetup.java - for initializing webdriver, browser and navigating to the Application "https://www.credify.tech/phone/nonDMFunnel"
+1.BaseTestSetup.java - for initializing webdriver, browser and navigating to the Application 
 -----------------
 it has below methods : 
 
